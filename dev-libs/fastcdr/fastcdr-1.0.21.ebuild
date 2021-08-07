@@ -2,25 +2,23 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-
 CMAKE_ECLASS=cmake
 inherit cmake-utils
 
-DESCRIPTION="STL compatible C++ memory allocator library using a new \
-	RawAllocator concept that is similar to an Allocator but easier to use and write."
-HOMEPAGE="https://memory.foonathan.net/"
+DESCRIPTION="eProsima FastCDR library provides two serialization mechanisms."
+HOMEPAGE="https://www.eprosima.com/"
 
-LICENSE="ZLIB"
+LICENSE="Apache-2.0"
 IUSE="debug test"
 SLOT="0/$(ver_cut 1)"
 
 if [[ ${PV} == *9999 ]]; then
-	EGIT_REPO_URI="https://github.com/foonathan/memory.git"
+	EGIT_REPO_URI="https://github.com/eProsima/Fast-CDR.git"
 	inherit git-r3
 else
-	SRC_URI="https://github.com/foonathan/memory/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="https://github.com/eProsima/Fast-CDR/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="amd64 arm arm64 x86"
-	S="${WORKDIR}/memory-${PV}"
+	S="${WORKDIR}/Fast-CDR-${PV}"
 fi
 
 DEPEND=""
@@ -30,7 +28,7 @@ RESTRICT="!test? ( test )"
 
 src_configure() {
 	local mycmakeargs=(
-		-DFOONATHAN_MEMORY_BUILD_TESTS=$(usex test 'ON' 'OFF')
+		-DEPROSIMA_BUILD_TESTS=$(usex test 'ON' 'OFF')
 		-DCMAKE_BUILD_TYPE=$(usex debug "Debug" "Release")
 	)
 	cmake-utils_src_configure
