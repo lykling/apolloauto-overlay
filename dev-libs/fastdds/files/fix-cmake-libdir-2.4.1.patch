@@ -1,0 +1,20 @@
+--- a/CMakeLists.txt	2021-12-09 03:30:41.434906374 +0800
++++ b/CMakeLists.txt	2021-12-09 03:27:43.325894041 +0800
+@@ -18,6 +18,8 @@
+ cmake_minimum_required(VERSION 3.5)
+ cmake_policy(VERSION 3.5...3.13)
+ 
++INCLUDE(GNUInstallDirs)
++
+ # Set CMAKE_BUILD_TYPE to Release by default.
+ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+     message(STATUS "Setting build type to 'Release' as none was specified.")
+@@ -99,7 +101,7 @@
+ ###############################################################################
+ set(BIN_INSTALL_DIR bin/ CACHE PATH "Installation directory for binaries")
+ set(INCLUDE_INSTALL_DIR include/ CACHE PATH "Installation directory for C++ headers")
+-set(LIB_INSTALL_DIR lib/ CACHE PATH "Installation directory for libraries")
++set(LIB_INSTALL_DIR ${CMAKE_INSTALL_FULL_LIBDIR} CACHE PATH "Installation directory for libraries")
+ set(DATA_INSTALL_DIR share/ CACHE PATH "Installation directory for data")
+ if(WIN32)
+     set(DOC_DIR "doc")

@@ -13,7 +13,7 @@ LICENSE="Apache-2.0"
 IUSE="debug test tools"
 SLOT="0/$(ver_cut 1)"
 PATCHES=(
-	"${FILESDIR}/fix-cmake-libdir.patch"
+	"${FILESDIR}/fix-cmake-libdir-${PV}.patch"
 )
 
 if [[ ${PV} == *9999 ]]; then
@@ -21,7 +21,7 @@ if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
 else
 	SRC_URI="https://github.com/eProsima/Fast-DDS/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
+	KEYWORDS="amd64 arm arm64 x86"
 	S="${WORKDIR}/Fast-DDS-${PV}"
 fi
 

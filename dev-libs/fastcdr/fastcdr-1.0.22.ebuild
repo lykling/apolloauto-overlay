@@ -17,7 +17,7 @@ if [[ ${PV} == *9999 ]]; then
 	inherit git-r3
 else
 	SRC_URI="https://github.com/eProsima/Fast-CDR/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
+	KEYWORDS="amd64 arm arm64 x86"
 	S="${WORKDIR}/Fast-CDR-${PV}"
 fi
 
