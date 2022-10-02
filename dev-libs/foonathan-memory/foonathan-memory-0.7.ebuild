@@ -4,7 +4,7 @@
 EAPI=7
 
 CMAKE_ECLASS=cmake
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="STL compatible C++ memory allocator library using a new \
 	RawAllocator concept that is similar to an Allocator but easier to use and write."
@@ -33,5 +33,5 @@ src_configure() {
 		-DFOONATHAN_MEMORY_BUILD_TESTS=$(usex test 'ON' 'OFF')
 		-DCMAKE_BUILD_TYPE=$(usex debug "Debug" "Release")
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }

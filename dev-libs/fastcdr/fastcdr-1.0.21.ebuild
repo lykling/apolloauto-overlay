@@ -3,7 +3,7 @@
 
 EAPI=7
 CMAKE_ECLASS=cmake
-inherit cmake-utils
+inherit cmake
 
 DESCRIPTION="eProsima FastCDR library provides two serialization mechanisms."
 HOMEPAGE="https://www.eprosima.com/"
@@ -31,5 +31,5 @@ src_configure() {
 		-DEPROSIMA_BUILD_TESTS=$(usex test 'ON' 'OFF')
 		-DCMAKE_BUILD_TYPE=$(usex debug "Debug" "Release")
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
