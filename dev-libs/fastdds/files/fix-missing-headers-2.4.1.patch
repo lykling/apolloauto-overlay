@@ -1,0 +1,12 @@
+diff --git a/include/fastrtps/types/TypeNamesGenerator.h b/include/fastrtps/types/TypeNamesGenerator.h
+index a8f45e013..5554eeaa9 100644
+--- a/include/fastrtps/types/TypeNamesGenerator.h
++++ b/include/fastrtps/types/TypeNamesGenerator.h
+@@ -3,6 +3,7 @@
+ 
+ #include <fastrtps/fastrtps_dll.h>
+ 
++#include <cstdint>
+ #include <string>
+ #include <vector>
+ 

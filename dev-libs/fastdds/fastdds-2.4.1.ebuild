@@ -14,6 +14,7 @@ IUSE="debug test tools"
 SLOT="0/$(ver_cut 1)"
 PATCHES=(
 	"${FILESDIR}/fix-cmake-libdir-${PV}.patch"
+	"${FILESDIR}/fix-missing-headers-${PV}.patch"
 )
 
 if [[ ${PV} == *9999 ]]; then
