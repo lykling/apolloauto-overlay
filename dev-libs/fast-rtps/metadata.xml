@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <use>
+    <flag name="android">Enable support for Android</flag>
+  </use>
+  <use>
+    <flag name="thirdparty_asio">Use thirdparty submodule asio</flag>
+  </use>
+  <use>
+    <flag name="thirdparty_fastcdr">Use thirdparty submodule fastcdr</flag>
+  </use>
+  <use>
+    <flag name="thirdparty_tinyxml2">Use thirdparty submodule tinyxml2</flag>
+  </use>
+</pkgmetadata>

@@ -1,0 +1,21 @@
+diff --git a/cmake/modules/FindTinyXML2.cmake b/cmake/modules/FindTinyXML2.cmake
+index 805514a32..54f88da26 100644
+--- a/cmake/modules/FindTinyXML2.cmake
++++ b/cmake/modules/FindTinyXML2.cmake
+@@ -4,7 +4,15 @@
+ 
+ find_package(TinyXML2 CONFIG QUIET)
+ if(TinyXML2_FOUND)
+-    message(STATUS "Found TinyXML2")
++    message(STATUS "Found TinyXML2 ${TinyXML2_DIR}")
++    if(NOT TINYXML2_LIBRARY)
++        if(TARGET tinyxml2)
++            set(TINYXML2_LIBRARY tinyxml2)
++        elseif(TARGET tinyxml2::tinyxml2)
++            set(TINYXML2_LIBRARY tinyxml2)
++        endif()
++    endif()
++
+ else()
+     if(THIRDPARTY OR ANDROID)
+         find_path(TINYXML2_INCLUDE_DIR NAMES tinyxml2.h NO_CMAKE_FIND_ROOT_PATH)
